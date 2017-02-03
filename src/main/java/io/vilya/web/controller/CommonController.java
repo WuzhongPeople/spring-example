@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import io.vilya.common.annotation.ClearInterceptor;
+
 /**
  * @author iamaprin
  * 2017年1月23日 下午11:12:53
@@ -19,6 +21,7 @@ public class CommonController {
     
     @RequestMapping("")
     @ResponseBody
+    @ClearInterceptor
     public String index() {
 	return "test";
     }

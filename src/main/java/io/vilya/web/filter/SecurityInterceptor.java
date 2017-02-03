@@ -5,13 +5,19 @@
  */
 package io.vilya.web.filter;
 
+import java.lang.annotation.Annotation;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import io.vilya.common.annotation.ClearInterceptor;
 
 /**
  * @author iamaprin
@@ -27,6 +33,15 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
 	// TODO Auto-generated method stub
 	
 	
+	LOG.info(request.getPathInfo());
+
+	HandlerMethod handlerMethod = (HandlerMethod) handler;
+	Annotation annotation = handlerMethod.getMethodAnnotation(ClearInterceptor.class);
+	if (annotation == null) {
+	    LOG.info("no ClearInterceptor");
+	} else {
+	    LOG.info(annotation.toString());	    
+	}
 	
 	return super.preHandle(request, response, handler);
     }
