@@ -7,10 +7,10 @@ package io.vilya.common.utils;
 
 import java.util.Properties;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.util.StringUtils;
 
 /**
  * @author iamaprin
@@ -34,11 +34,20 @@ public class PropertyUtils {
     }
     
     public String get(String key) {
-	return get(key, "");
+	return get(key, StringUtils.EMPTY);
     }
     
     public String get(String key, String defaultvalue) {
 	return _properties.getProperty(key, defaultvalue);
+    }
+    
+    public int getInt(String key) {
+	return getInt(key, Integer.MIN_VALUE);
+    }
+    
+    public int getInt(String key, int defaultValue) {
+	String value = get(key);
+	return StringUtils.isEmpty(value) ? defaultValue : Integer.valueOf(value);
     }
     
     

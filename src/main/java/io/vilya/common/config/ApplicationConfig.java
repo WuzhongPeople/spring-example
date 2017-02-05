@@ -40,11 +40,19 @@ public class ApplicationConfig implements ServletContextAware {
     
     private ServletContext servletContext;
     
-    @Bean
+    private static final PropertyUtils propertyUtils = PropertyUtils.getInstance();
+    
+    @Bean(initMethod="init", destroyMethod="close")
     public DataSource dataSource() {
 	DruidDataSource dataSource = new DruidDataSource();
-	dataSource.setDriverClassName("");
-	LOG.info(PropertyUtils.getInstance().get("name"));
+	dataSource.setDriverClassName(propertyUtils.get("spring.datasource.driverClassNam"));
+	dataSource.setUrl(propertyUtils.get("spring.datasource.url"));
+	dataSource.setUsername(propertyUtils.get("spring.datasource.username"));
+	dataSource.setPassword(propertyUtils.get("spring.datasource.password"));
+	dataSource.setInitialSize(propertyUtils.getInt("spring.datasource.initialSize"));
+	dataSource.setMinIdle(propertyUtils.getInt("spring.datasource.minIdle"));
+	dataSource.setMaxActive(propertyUtils.getInt("spring.datasource.maxActive"));
+	
 	return dataSource;
     }
     
