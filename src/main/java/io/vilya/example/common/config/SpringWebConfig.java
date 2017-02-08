@@ -3,7 +3,7 @@
  * io.vilya.common.config
  * 2017年1月23日 下午10:15:59
  */
-package io.vilya.common.config;
+package io.vilya.example.common.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import io.vilya.common.utils.PropertyUtils;
-import io.vilya.web.filter.SecurityInterceptor;
+import io.vilya.example.web.filter.SecurityInterceptor;
 
 /**
  * @author iamaprin
@@ -22,7 +21,7 @@ import io.vilya.web.filter.SecurityInterceptor;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(value="io.vilya.web.controller")
+@ComponentScan(value="io.vilya.example.web.controller")
 public class SpringWebConfig extends WebMvcConfigurerAdapter {
 
     private static final Logger LOG = LoggerFactory.getLogger(SpringWebConfig.class);

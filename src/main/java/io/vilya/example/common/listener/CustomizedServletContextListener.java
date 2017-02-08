@@ -3,7 +3,7 @@
  * io.vilya.common.listener
  * 2017年2月5日 上午8:58:31
  */
-package io.vilya.common.listener;
+package io.vilya.example.common.listener;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,9 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-
-import io.vilya.common.utils.PropertyInitializer;
-import io.vilya.common.utils.PropertyUtils;
 
 /**
  * @author iamaprin

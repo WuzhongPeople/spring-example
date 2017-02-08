@@ -3,7 +3,7 @@
  * io.vilya.common.annotation
  * 2017年1月27日 下午11:07:11
  */
-package io.vilya.common.annotation;
+package io.vilya.example.common.annotation;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;

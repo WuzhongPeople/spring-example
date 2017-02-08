@@ -3,21 +3,19 @@
  * io.vilya.web.filter
  * 2017年1月23日 下午10:18:47
  */
-package io.vilya.web.filter;
+package io.vilya.example.web.filter;
 
 import java.lang.annotation.Annotation;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import io.vilya.common.annotation.ClearInterceptor;
+import io.vilya.example.common.annotation.ClearInterceptor;
 
 /**
  * @author iamaprin

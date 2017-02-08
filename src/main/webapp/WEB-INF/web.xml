@@ -10,11 +10,11 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>io.vilya.common.config.ApplicationConfig</param-value>
+		<param-value>io.vilya.example.common.config.ApplicationConfig</param-value>
 	</context-param>
 	
 	<listener>
-		<listener-class>io.vilya.common.listener.CustomizedServletContextListener</listener-class>
+		<listener-class>io.vilya.example.common.listener.CustomizedServletContextListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -33,7 +33,7 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>io.vilya.common.config.SpringWebConfig</param-value>
+			<param-value>io.vilya.example.common.config.SpringWebConfig</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

@@ -3,14 +3,13 @@
  * io.vilya.common
  * 2017年2月5日 上午9:10:34
  */
-package io.vilya.common.utils;
+package io.vilya.example.common.utils;
 
 import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author iamaprin
