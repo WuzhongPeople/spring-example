@@ -47,6 +47,10 @@ dependencies {
     compile('com.alibaba:druid:1.0.27')
 	compile('org.mybatis:mybatis:3.2.8')
     compile('org.mybatis:mybatis-spring:1.3.1')
+    compile('com.fasterxml.jackson.core:jackson-databind:2.8.6')
+    
+    compile group: 'org.flowable', name: 'flowable-engine', version: '6.0.0.RC1'
+    
     
 	providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
     // Declare the dependency for your favourite test framework you want to use in your tests.
@@ -63,7 +67,7 @@ sourceSets {
             srcDir 'src/main/java'
         }
         resources {
-            srcDir 'src/main/resources'
+            srcDir 'src/main/resource'
         }
     }
 }

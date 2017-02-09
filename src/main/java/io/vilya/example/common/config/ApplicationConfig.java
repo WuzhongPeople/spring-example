@@ -19,6 +19,7 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -38,7 +39,7 @@ import io.vilya.example.common.utils.PropertyUtils;
  */
 @Configuration
 @EnableTransactionManagement
-// @EnableAspectJAutoProxy(proxyTargetClass=true)
+@Import({ FlowableConfig.class })
 @ComponentScan(basePackages = {"io.vilya.example.model.dao", "io.vilya.example.service"})
 public class ApplicationConfig implements ServletContextAware {
     
@@ -50,14 +51,17 @@ public class ApplicationConfig implements ServletContextAware {
     
     @Bean(initMethod="init", destroyMethod="close")
     public DataSource dataSource() {
+	LOG.info("core dataSource inited.");
+	
 	DruidDataSource dataSource = new DruidDataSource();
 	dataSource.setDriverClassName(propertyUtils.get("spring.datasource.driverClassNam"));
-	dataSource.setUrl(propertyUtils.get("spring.datasource.url"));
-	dataSource.setUsername(propertyUtils.get("spring.datasource.username"));
-	dataSource.setPassword(propertyUtils.get("spring.datasource.password"));
 	dataSource.setInitialSize(propertyUtils.getInt("spring.datasource.initialSize"));
 	dataSource.setMinIdle(propertyUtils.getInt("spring.datasource.minIdle"));
 	dataSource.setMaxActive(propertyUtils.getInt("spring.datasource.maxActive"));
+	
+	dataSource.setUrl(propertyUtils.get("db.core.url"));
+	dataSource.setUsername(propertyUtils.get("db.core.username"));
+	dataSource.setPassword(propertyUtils.get("db.core.password"));
 	
 	return dataSource;
     }
