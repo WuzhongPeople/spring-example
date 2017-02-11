@@ -17,7 +17,7 @@ import io.vilya.example.service.test.TestService;
  * 2017年2月8日 下午11:51:15
  */
 @Service
-@Transactional
+@Transactional("transactionManager")
 public class TestServiceImpl implements TestService {
     
     @Autowired
@@ -26,12 +26,6 @@ public class TestServiceImpl implements TestService {
     @Override
     public boolean insert(String value) {
 	return testMapper.insert(value) > 0;
-    }
-    
-    public boolean _insert(String value) {
-	int rows = testMapper.insert(value);
-	int t = 2 / 0;
-	return rows > 0;
     }
 }
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.vilya.example.service.test.TestService;
+import io.vilya.example.service.test.impl.TestServiceImpl;
 
 /**
  * @author iamaprin

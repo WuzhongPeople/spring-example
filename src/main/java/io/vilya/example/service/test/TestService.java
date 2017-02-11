@@ -12,6 +12,4 @@ package io.vilya.example.service.test;
 public interface TestService {
     
     boolean insert(String value);
-    
-    boolean _insert(String value);
 }
