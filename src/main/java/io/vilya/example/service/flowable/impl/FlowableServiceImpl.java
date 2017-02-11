@@ -38,24 +38,12 @@ public class FlowableServiceImpl implements FlowableService {
 		.deploy();
 	
 	return deployment;
-	
     }
     
     @Override
     public void undeploy(String deploymentId) {
 	repositoryService.deleteDeployment(deploymentId);
     }
-    
-    @Override
-    public void test() {
-	repositoryService.createDeployment()
-        	.name("test")
-        	.addClasspathResource("diagram/test.bpmn")
-        	.deploy();
-	
-	repositoryService.deleteDeployment("tets");
-    }
-
 
 
 }

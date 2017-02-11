@@ -49,12 +49,6 @@ public class FlowableController {
 	
 	return "undeploy";
     }
-    
-    @RequestMapping("/test")
-    public String test() {
-	flowableService.test();
-	return "test";
-    }
 }
 
 

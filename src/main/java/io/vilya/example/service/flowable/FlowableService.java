@@ -15,14 +15,6 @@ public interface FlowableService {
     
     Deployment deploy();
 
-    /**
-     * @param deploymentId
-     */
     void undeploy(String deploymentId);
-
-    /**
-     * 
-     */
-    void test();
     
 }
