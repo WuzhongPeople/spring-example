@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import io.vilya.example.service.flowable.FlowableService;
-import io.vilya.example.service.flowable.FlowableService;
 
 /**
  * @author iamaprin

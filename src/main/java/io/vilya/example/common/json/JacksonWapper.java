@@ -11,8 +11,5 @@ package io.vilya.example.common.json;
  */
 public class JacksonWapper {
     
-    public void test() {
-	
-    }
     
 }

@@ -65,6 +65,7 @@ sourceSets {
     main {
         java {
             srcDir 'src/main/java'
+            srcDir 'src/main/test'
         }
         resources {
             srcDir 'src/main/resource'
