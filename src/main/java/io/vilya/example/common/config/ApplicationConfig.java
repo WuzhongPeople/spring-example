@@ -39,7 +39,7 @@ import io.vilya.example.common.utils.PropertyUtils;
  */
 @Configuration
 @EnableTransactionManagement
-@Import({ FlowableConfig.class })
+@Import({ FlowableConfig.class, SpringSecurityConfig.class})
 @ComponentScan(basePackages = {"io.vilya.example.model.dao", "io.vilya.example.service"})
 public class ApplicationConfig implements ServletContextAware {
     
